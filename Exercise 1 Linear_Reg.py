@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Linear Regression Example 
+# Linear Regression Example 
 #1) Load the dataset 'OmniPower.csv'
 #2) Create a Linear Regression Model with two independent variables (Price and Promotion), one dependent variable (Sale)
 #3) Provide input values and predict the Sale
@@ -65,7 +65,6 @@ lr.fit(x_train, y_train)
 
 
 # In[95]:
-45
 
 print(lr.intercept_)
 print(lr.coef_)
@@ -77,7 +76,7 @@ print(lr.score(x_train, y_train))
 
 price = float(input("Enter price: "))
 promotion = float(input("Enter promotion: "))
-print("Predicted sales: {0}".format(lr.predict([[promotion/price]])))
+print("Predicted sales: {0}".format(lr.predict([[np.log(promotion**0.5/price**2)]])))
 
 
 # In[97]:

@@ -18,8 +18,9 @@ import matplotlib.pyplot as plt
 
 df = pd.read_csv("OmniPower.csv")
 df
-df0 = df.groupby(["Price", "Promotion"]).mean()
-df0
+df0 = df.groupby(["Price", "Promotion"]).mean("Sales")
+df0.plot.bar()
+
 
 #%%
 df1 = pd.DataFrame ({
@@ -30,16 +31,6 @@ df1 = pd.DataFrame ({
               df0.iloc[8,0]]
 })
 df1
-
-#%%
-df2 = pd.DataFrame ({
-    'Price': [59,79,99],
-    '200' : [df1.iloc[0,2], df1.iloc[3,2], df1.iloc[6,2]],  
-    '400' : [df1.iloc[1,2], df1.iloc[4,2], df1.iloc[7,2]],
-    '600' : [df1.iloc[2,2], df1.iloc[5,2], df1.iloc[8,2]]
-})
-df2
-df2.plot.bar(x='Price', y =['200','400', '600'])
 
 
 # In[106]:

@@ -3,7 +3,7 @@
 
 # # Other Classification Exercise - KNN
 # Peform the same exercise as Logistic Regression using KNN Classifier
-# In[1]:
+# In[2]:
 
 
 import numpy as np
@@ -12,14 +12,14 @@ import sklearn
 import matplotlib.pyplot as plt
 
 
-# In[34]:
+# In[3]:
 
 
 df = pd.read_csv("iris-data-clean.csv")
 df['class']
 
 
-# In[36]:
+# In[4]:
 
 
 df1 = df
@@ -30,7 +30,7 @@ df1 = df1.astype({'class': int})
 df1['class']
 
 
-# In[37]:
+# In[5]:
 
 
 from sklearn.model_selection import train_test_split
@@ -41,7 +41,7 @@ y = df1['class']
 X_train, X_test, y_train, y_test = train_test_split(X, y, random_state = 42)
 
 
-# In[50]:
+# In[16]:
 
 
 from sklearn.neighbors import KNeighborsClassifier
@@ -51,28 +51,28 @@ knn = KNeighborsClassifier(n_neighbors = 5)
 knn.fit(X_train, y_train)
 
 
-# In[51]:
+# In[17]:
 
 
 y_pred = knn.predict(X_test)
 
 
-# In[52]:
+# In[18]:
 
 
 from sklearn.metrics import accuracy_score
 print(accuracy_score(y_test, y_pred))
 
 
-# In[63]:
+# In[19]:
 
 
-X1 = df1.iloc[:, 0:2]
+X1 = df1.iloc[:, 2:4]
 
 X1_train, X1_test, y1_train, y1_test = train_test_split(X1, y, random_state = 42)
 
 
-# In[64]:
+# In[20]:
 
 
 knn.fit(X1_train, y1_train)

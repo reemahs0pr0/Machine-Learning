@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Nov  4 15:32:20 2020
-
-@author: shame
-"""
-
 import numpy as np 
 import pandas as pd 
 import re
@@ -83,10 +76,3 @@ from sklearn.metrics import classification_report, confusion_matrix, accuracy_sc
 print(confusion_matrix(y_test,predictions))
 print(classification_report(y_test,predictions))
 print(accuracy_score(y_test, predictions))
-
-
-
-
-
-
-
